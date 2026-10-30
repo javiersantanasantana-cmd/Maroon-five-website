@@ -1,0 +1,278 @@
+/* ============================================================
+   ESTILOS GENERALES
+   ============================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================================
+   ESTILOS DE ICONOS LOCALES (PNG)
+   ============================================================ */
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 6px;
+    object-fit: contain;
+}
+
+/* ============================================================
+   HEADER, BANNER Y NAVEGACIÓN
+   ============================================================ */
+.header-container {
+    width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto hover en los enlaces del nav */
+.nav-link:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.main-title {
+    text-align: center;
+    padding: 25px 0 10px 0;
+    font-size: 2.5rem;
+}
+
+.group-banner-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 20px;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+/* ============================================================
+   SECCIONES Y TÍTULOS
+   ============================================================ */
+.section-block {
+    padding: 20px 0;
+    width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    margin: 30px auto 15px auto;
+    padding: 12px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.subtitle-note {
+    text-align: center;
+    font-style: italic;
+    margin: 10px auto;
+    color: #666666;
+    max-width: 900px;
+}
+
+/* ============================================================
+   TARJETAS Y GALERÍAS
+   ============================================================ */
+.member-card,
+.song-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover,
+.song-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   TAMAÑOS DE IMÁGENES
+   ============================================================ */
+/* Miembros del grupo (más grandes) */
+.gallery-group-image-container img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+/* James Valentine - ajuste de reencuadre */
+.members-gallery .member-card:nth-child(2) .gallery-group-image-container img {
+    object-position: center 20%;
+}
+
+/* Canciones favoritas (tamaño intermedio) */
+.gallery-favourite-song-image-container img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+/* Top canciones (más pequeñas) */
+.gallery-song-image-container img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.member-card h3,
+.song-card h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.member-card p,
+.song-card p {
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.main-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+
+/* 1. Ordenador (> 992 px) -> Filas de 3 */
+@media screen and (min-width: 993px) {
+    .section-title {
+        background-color: #eef2f7;
+    }
+
+    .members-gallery,
+    .top-songs-gallery,
+    .favorite-songs-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        width: 100%;
+    }
+}
+
+/* 2. Tablet (768 px a 992 px) -> Miembros en 3, canciones en 2 y 1 */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .section-title {
+        background-color: #e6f4ea;
+    }
+
+    .members-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .top-songs-gallery,
+    .favorite-songs-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .item-top-3 {
+        grid-column: 1;
+    }
+
+    .item-top-2 {
+        grid-column: 2;
+    }
+
+    .item-top-1 {
+        grid-column: 1 / span 2;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* 3. Móvil (< 768 px) -> Disposición vertical */
+@media screen and (max-width: 767px) {
+    .section-title {
+        background-color: #fce8e6;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .members-gallery,
+    .top-songs-gallery,
+    .favorite-songs-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
